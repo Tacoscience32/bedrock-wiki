@@ -1,14 +1,3 @@
----
-title: Entity Counter
-category: Scoreboard Systems
-mentions:
-    - BedrockCommands
-    - zheaEvyline
-nav_order: 3
-tags:
-    - system
----
-
 ## Introduction
 
 [Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
@@ -55,3 +44,15 @@ Now based on the values obtained we can use the `/execute if score` command to r
 - **` n.. `** any number n and above
 - **` ..n `** any number n and below
 - **` n1..n2 `** any number n1 to any number n2.
+
+## Entity Counter
+To start off with, type these commands in chat:
+- If you haven't already: `/scoreboard objective add total dummy`
+- `/scoreboard objective setdisplay sidebar total`
+
+Then set the following commands:
+`/scoreboard players set entities toatal 0` Repeat | Unconditional | Always Active
+Then make that command block face into this one:
+`/execute as @e[type=!player] run scoreboard players add entities total 1` Chain | Unconditional | Always Active
+
+These commands all one to the score for "entities" for every entity that exists that is not a player. This only counts loaded entities. The first command clears the count to count again otherwise it would just add on and on.
